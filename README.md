@@ -13,3 +13,6 @@ SummaryTable = readtable('/Users/Athena/GaTech Dropbox/Athena Chien/PBL Hanna-At
 20241212_makeLookupTableGeneralizedMac.py and 20241212_makeLookupTableGeneralizedPC.py are python scripts to automatically generate the lookup tables the matlab code needs to run fitting, on either a mac or PC, accordingly.
 These files require editing the experiment name and changing the filepaths in lines (18, 20, 26, 27).
 The provided makeLookupTable code requires all data files have the text _freq in the filename (this prevents attempts to process dotfiles in the folder).
+- Replace "workingFolder" with the file and path to direct to the desired folder with the raw data files. Replace "summaryTable" name with the desired name of the summary table. Replace "raw directory" with the path to the "raw data" folder.
+- This code automatically detects any files with "modelCell" to set cross-sectional area to 1, and all remaining to the cross-sectional area of a Corning 3460 Transwell, 1.12 $cm^{2}$.
+- This code copies the raw data files and the final summary table to the folder with the fit code. Additional columns can be filled out manually for additional notes, and then should be manually copied to the fit folder under "lookup table".
