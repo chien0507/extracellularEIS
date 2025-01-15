@@ -1,7 +1,8 @@
 # extracellularEIS
 
 This github repo includes:
-- file structure and code for loading in lookup tables and raw EIS data, and outputting TER, TEC, membrane ratio, and resnorm in a summary table for each raw EIS sweep.
+- file structure and code for fitting raw EIS data with the RCRC model (as specified in Protocols paper: XX)
+  - performs fitting by loading in lookup tables and raw EIS data, and outputting TER, TEC, membrane ratio, and resnorm in a summary table for each raw EIS sweep.
 - Matlab code for calculating mean absolute error (MAE) on autolab data (calcMAE.m)
 - Python code for mac and PC automatically generate lookup tables (20241212_makeLookupTableGeneralizedMac.py and 20241212_makeLookupTableGeneralizedPC.py)
 
