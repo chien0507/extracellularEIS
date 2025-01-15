@@ -8,8 +8,8 @@ This github repo includes:
 
 # Fitting raw EIS data with RCRC model:
 
-# Using calcMAE.m to calculate the mean absolute error of an EIS sweep an RCRC fit:
-calcMAE.m - change line 2 and 5 to reference the folder with the raw data and the summary table, correspondingly, and run the matlab code to output a file with the resnorm and RMSE as 2 columns, comma delimited.
+# Using calcMAE.m to calculate the mean absolute error (MAE) of an EIS sweep an RCRC fit:
+- change line 2 and 5 to reference the folder with the raw data and the summary table, correspondingly, and run the matlab code to output a file with the resnorm and MAE as 2 columns, comma delimited:
 dataLocation = '/Users/Athena/GaTech Dropbox/Athena Chien/WPI EIS Project/Biological Sample Data/9-23-24 Testing/20240923_WPIbioExp2/';
 SummaryTable = readtable('/Users/Athena/GaTech Dropbox/Athena Chien/PBL Hanna-Athena Files/dataforBPSabstract/newSummary/20240923_WPIBIoExp2_newSettings_summary_table.csv');
 
