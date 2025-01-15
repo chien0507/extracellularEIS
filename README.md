@@ -7,7 +7,7 @@ This github repo includes:
 - Python code for mac and PC automatically generate lookup tables (20241212_makeLookupTableGeneralizedMac.py and 20241212_makeLookupTableGeneralizedPC.py)
 
 ## Fitting raw EIS data with RCRC model:
-1. Open the the downloaded ``extracellularEIS-main" folder from Github. Copy and paste the template lookup table in the ``lookup table" folder titled ``Template Lookup Table.xlsx" and rename the copy with your experiment name (e.g. ``20240706Exp1 Lookup Table.xlsx").
+1. Open the the downloaded "extracellularEIS-main" folder from Github. Copy and paste the template lookup table in the ``lookup table" folder titled ``Template Lookup Table.xlsx" and rename the copy with your experiment name (e.g. ``20240706Exp1 Lookup Table.xlsx").
 2. In the renamed lookup table, copy the name(s) of the raw data text file(s) (e.g. data1\_freq.txt) you would like to fit into Column B, under ``plateID."
 3. Type the cross-sectional area of the sample for each raw file in Column K, under ``measArea" (1.12 $\mathrm{cm^2}$ for Corning 3460 cell culture inserts).
 4. Number the files in column A with integer values starting at 1.
