@@ -7,15 +7,15 @@ This github repo includes:
 - Python code for mac and PC automatically generate lookup tables (20241212_makeLookupTableGeneralizedMac.py and 20241212_makeLookupTableGeneralizedPC.py)
 
 ## Fitting raw EIS data with RCRC model:
-1. Open the the downloaded 'extracellularEIS-main' folder from Github. Copy and paste the template lookup table in the ``lookup table" folder titled ``Template Lookup Table.xlsx" and rename the copy with your experiment name (e.g. ``20240706Exp1 Lookup Table.xlsx").
-2. In the renamed lookup table, copy the name(s) of the raw data text file(s) (e.g. data1\_freq.txt) you would like to fit into Column B, under ``plateID."
-3. Type the cross-sectional area of the sample for each raw file in Column K, under ``measArea" (1.12 $\mathrm{cm^2}$ for Corning 3460 cell culture inserts).
+1. Open the the downloaded ``extracellularEIS-main`` folder from Github. Copy and paste the template lookup table in the ``lookup table`` folder titled ``Template Lookup Table.xlsx`` and rename the copy with your experiment name (e.g. ``20240706Exp1 Lookup Table.xlsx``).
+2. In the renamed lookup table, copy the name(s) of the raw data text file(s) (e.g. data1\_freq.txt) you would like to fit into Column B, under ``plateID.``
+3. Type the cross-sectional area of the sample for each raw file in Column K, under ``measArea`` (1.12 $\mathrm{cm^2}$ for Corning 3460 cell culture inserts).
 4. Number the files in column A with integer values starting at 1.
 5. Save and close the lookup table.
-6. Copy all the raw impedance data files output by the NOVA software into the ``raw data" folder in the ``extracellularEIS-main" folder.
-7. Open the ``NOVA\_batch\_20240125.m" file in Matlab and change the file name and path in line 51 to point to the desired lookup table (e.g. ``20240706Exp1 Lookup Table.xlsx").
-8. In the Matlab software, click the ``Editor" menu in the top bar, and then the ``Run" button to begin fitting. The software runs multiple fits in parallel, and should show ``parallel processing" in the lower left corner. A figure will pop up and update with the raw data Nyquist plots and the overlaid fit line as the fit code is running through each sweep.
-9. When completed, a file with the format ``\_summary\_table.csv" will be generated in the ``FIT" folder. The parameters output into the csv are listed in Table \ref{Table:summaryTable}. 
+6. Copy all the raw impedance data files output by the NOVA software into the ``raw data" folder in the ``extracellularEIS-main`` folder.
+7. Open the ``NOVA\_batch\_20240125.m`` file in Matlab and change the file name and path in line 51 to point to the desired lookup table (e.g. ``20240706Exp1 Lookup Table.xlsx``).
+8. In the Matlab software, click the ``Editor`` menu in the top bar, and then the ``Run`` button to begin fitting. The software runs multiple fits in parallel, and should show ``parallel processing`` in the lower left corner. A figure will pop up and update with the raw data Nyquist plots and the overlaid fit line as the fit code is running through each sweep.
+9. When completed, a file with the format ``\_summary\_table.csv`` will be generated in the ``FIT`` folder. 
 
 ## Using calcMAE.m to calculate the mean absolute error (MAE) of an EIS sweep an RCRC fit:
 - change line 2 and 5 to reference the folder with the raw data and the summary table, correspondingly, and run the matlab code to output a file with the resnorm and MAE as 2 columns, comma delimited:
