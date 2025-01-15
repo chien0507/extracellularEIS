@@ -22,7 +22,7 @@ This github repo includes:
 1. change line 2 and 5 to reference the folder with the raw data and the summary table, correspondingly, and run the matlab code:
 dataLocation = '/Users/Athena/GaTech Dropbox/Athena Chien/WPI EIS Project/Biological Sample Data/9-23-24 Testing/20240923_WPIbioExp2/';
 SummaryTable = readtable('/Users/Athena/GaTech Dropbox/Athena Chien/PBL Hanna-Athena Files/dataforBPSabstract/newSummary/20240923_WPIBIoExp2_newSettings_summary_table.csv');
-2. A file titled ``MAE`` will be generated in the same directory as the Matlab code, with the resnorm and MAE as 2 columns, comma delimited.
+2. A file titled ``mae.txt`` will be generated in the same directory as the Matlab code, with the resnorm and MAE as 2 columns, comma delimited.
    
 ## Automatically generating lookup tables:
 20241212_makeLookupTableGeneralizedMac.py and 20241212_makeLookupTableGeneralizedPC.py are python scripts to automatically generate the lookup tables the matlab code needs to run fitting, on either a mac or PC, accordingly.
