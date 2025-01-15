@@ -1,7 +1,8 @@
 # extracellularEIS
 
 This github repo includes:
-Matlab code for calculating RMSE (and other error metrics) on autolab data.
+- file structure and code for loading in lookup tables and raw EIS data, and outputting TER, TEC, membrane ratio, and resnorm in a summary table for each raw EIS sweep.
+- Matlab code for calculating mean absolute error (MAE) on autolab data.
 
 Change working folder and other filepaths for the lookup table code.
 
