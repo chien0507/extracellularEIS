@@ -1,4 +1,4 @@
-# extracellularEIS
+# extracellularEIS Repo
 
 This github repo includes:
 - file structure and code for fitting raw EIS data with the RCRC model (as specified in Protocols paper: XX)
@@ -6,14 +6,14 @@ This github repo includes:
 - Matlab code for calculating mean absolute error (MAE) on autolab data (calcMAE.m)
 - Python code for mac and PC automatically generate lookup tables (20241212_makeLookupTableGeneralizedMac.py and 20241212_makeLookupTableGeneralizedPC.py)
 
-# Fitting raw EIS data with RCRC model:
+## Fitting raw EIS data with RCRC model:
 
-# Using calcMAE.m to calculate the mean absolute error (MAE) of an EIS sweep an RCRC fit:
+## Using calcMAE.m to calculate the mean absolute error (MAE) of an EIS sweep an RCRC fit:
 - change line 2 and 5 to reference the folder with the raw data and the summary table, correspondingly, and run the matlab code to output a file with the resnorm and MAE as 2 columns, comma delimited:
 dataLocation = '/Users/Athena/GaTech Dropbox/Athena Chien/WPI EIS Project/Biological Sample Data/9-23-24 Testing/20240923_WPIbioExp2/';
 SummaryTable = readtable('/Users/Athena/GaTech Dropbox/Athena Chien/PBL Hanna-Athena Files/dataforBPSabstract/newSummary/20240923_WPIBIoExp2_newSettings_summary_table.csv');
 
-# Automatically generating lookup tables:
+## Automatically generating lookup tables:
 20241212_makeLookupTableGeneralizedMac.py and 20241212_makeLookupTableGeneralizedPC.py are python scripts to automatically generate the lookup tables the matlab code needs to run fitting, on either a mac or PC, accordingly.
 These files require editing the experiment name and changing the filepaths in lines (18, 20, 26, 27).
 The provided makeLookupTable code requires all data files have the text _freq in the filename (this prevents attempts to process dotfiles in the folder).
