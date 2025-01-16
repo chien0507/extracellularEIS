@@ -4,7 +4,7 @@ This github repo includes:
 - file structure and code for fitting raw EIS data with the RCRC model (as specified in Protocols paper: XX)
   - lookup table must be loaded into ``lookup table`` folder, raw EIS datafiles into ``raw data`` folder
   - then when the matlab code ``NOVA_batch_20240125.m`` is run, TER, TEC, membrane ratio, and resnorm are output as a summary table for each raw EIS sweep in ``FIT`` folder
-- Matlab code for calculating mean absolute error (MAE) on EIS data data (calcMAE.m)
+- Matlab code for calculating mean absolute error (MAE) on EIS data data (calcError.m)
 - Python code for mac and PC to automatically generate lookup tables (20241212_makeLookupTableGeneralizedMac.py and 20241212_makeLookupTableGeneralizedPC.py)
 
 ## Fitting raw EIS data with RCRC model:
@@ -18,11 +18,9 @@ This github repo includes:
 8. In the Matlab software, click the ``Editor`` menu in the top bar, and then the ``Run`` button to begin fitting. The software runs multiple fits in parallel, and should show ``parallel processing`` in the lower left corner. A figure will pop up and update with the raw data Nyquist plots and the overlaid fit line as the fit code is running through each sweep.
 9. When completed, a file with the format ``\_summary\_table.csv`` will be generated in the ``FIT`` folder. 
 
-## Using calcMAE.m to calculate the mean absolute error (MAE) of an EIS sweep an RCRC fit:
-1. change line 2 and 5 to reference the folder with the raw data and the summary table, correspondingly, and run the matlab code:
-dataLocation = '/Users/Athena/GaTech Dropbox/Athena Chien/WPI EIS Project/Biological Sample Data/9-23-24 Testing/20240923_WPIbioExp2/';
-SummaryTable = readtable('/Users/Athena/GaTech Dropbox/Athena Chien/PBL Hanna-Athena Files/dataforBPSabstract/newSummary/20240923_WPIBIoExp2_newSettings_summary_table.csv');
-2. A file titled ``mae.txt`` will be generated in the same directory as the Matlab code, with the resnorm and MAE as 2 columns, comma delimited.
+## Using calcError.m to calculate the mean absolute error (MAE) of an EIS sweep an RCRC fit:
+1. change line 2 (SummaryTable) and 5 (dataLocation) to reference the folder with the raw data and the summary table, correspondingly, and run the matlab code:
+2. A file titled ``errors.txt`` will be generated in the same directory as the Matlab code, with the filenames in the same order as the summary table, with their corresponding MAE in column 2, then resnorm in column 3, comma delimited.
    
 ## Automatically generating lookup tables:
 20241212_makeLookupTableGeneralizedMac.py and 20241212_makeLookupTableGeneralizedPC.py are python scripts to automatically generate the lookup tables the matlab code needs to run fitting, on either a mac or PC, accordingly.
