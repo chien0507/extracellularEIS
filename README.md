@@ -19,7 +19,7 @@ This github repo includes:
 9. When completed, a file with the format ``\_summary\_table.csv`` will be generated in the ``FIT`` folder. 
 
 ## Using calcError.m to calculate the mean absolute error (MAE) of an EIS sweep an RCRC fit:
-1. change line 2 (SummaryTable) and 5 (dataLocation) to reference the folder with the raw data and the summary table, correspondingly, and run the matlab code:
+1. change line 2 (SummaryTable) and 5 (dataLocation) to reference the folder with the raw data and the summary table, correspondingly, and run the matlab code.
 2. A file titled ``errors.txt`` will be generated in the same directory as the Matlab code, with the filenames in the same order as the summary table, with their corresponding MAE in column 2, then resnorm in column 3, comma delimited.
    
 ## Automatically generating lookup tables:
