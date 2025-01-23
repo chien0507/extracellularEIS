@@ -1,4 +1,4 @@
-# extracellularEIS Repo
+# extracellularEIS Repository
 
 This github repo includes:
 - file structure and code for fitting raw EIS data with the RCRC model (as specified in Protocols paper: XX)
