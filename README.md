@@ -1,6 +1,6 @@
 # extracellularEIS Repository
 
-This github repo includes:
+This github repository includes:
 - file structure and code for fitting raw EIS data with the RCRC model (as specified in Protocols paper: XX)
   - lookup table must be loaded into ``lookup table`` folder, raw EIS datafiles into ``raw data`` folder
   - then when the matlab code ``NOVA_batch_20240125.m`` is run, TER, TEC, membrane ratio, and resnorm are output as a summary table for each raw EIS sweep in ``FIT`` folder
