@@ -56,7 +56,7 @@ function [T_master,T_final,T_summary] = NOVA_function_20240125_Athena(lookup_tab
 
     % define the output summary table name based on the main lookup table
     % name
-    T_summary_name = extractBefore(lookup_table_name," Lookup");
+    T_summary_name = extractBefore(lookup_table_name," lookup");
     T_summary_name = replace(T_summary_name," ","_");
 
     % define import options for lookup table to work correctly
