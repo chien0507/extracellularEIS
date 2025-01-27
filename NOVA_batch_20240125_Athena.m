@@ -54,6 +54,6 @@ i = i+1; lookup_table(i,:) = {'20240923_Exp2 Lookup Table',0,settings};
 
 tic
 for idx = 1:i
-    [T_master,T_final,T_summary] = NOVA_function_20240125_Athena(lookup_table{idx,:});
+    [T_master,T_final,T_summary] = NOVA_function_20240125(lookup_table{idx,:});
 end
 toc
