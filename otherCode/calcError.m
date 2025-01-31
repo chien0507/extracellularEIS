@@ -19,6 +19,11 @@ for index = 1:row % read through every row of summary table
 
     % Calculate the impedance points from the model
     p = [SummaryTable.RblankArea(index)/SummaryTable.measArea(index) SummaryTable.R1Area(index)/SummaryTable.measArea(index) SummaryTable.C1Area(index)*SummaryTable.measArea(index) SummaryTable.R2Area(index)/SummaryTable.measArea(index) SummaryTable.C2Area(index)*SummaryTable.measArea(index)];
+    % if p has NANs - skip to next iteration of the for loop - this applies
+    % to blank TW measurements
+    if any(isnan(p))
+        continue;
+    end
     filename = SummaryTable.plateID(index);
     DataTable = readtable([dataLocation char(filename)]);
     w = [DataTable.Frequency_Hz_(1:num_freqs)]*2*pi;
@@ -86,8 +91,8 @@ for index = 1:row % read through every row of summary table
     resnorm_zdata = [resistance_data, reactance_data];
     resnorm_zdata_fitting = resnorm_zdata ./ normalizationArray;
     calcZ = originalfunRCRC(log10(p),w);
-    calcZ_norm(:, 1) = calcZ(:, 1) / normalizationArray(1); % normalization array(1) is the max of the RAW real data
-    calcZ_norm(:, 2) = calcZ(:, 2) / normalizationArray(2); % normalization array(1) is the max of the RAW imag data
+    calcZ_norm(:, 1) = calcZ(:, 1) ./ normalizationArray(1); % normalization array(1) is the max of the RAW real data
+    calcZ_norm(:, 2) = calcZ(:, 2) ./ normalizationArray(2); % normalization array(1) is the max of the RAW imag data
     normZres = calcZ_norm - resnorm_zdata_fitting;
     % Residuals
     resnorm = sum(normZres(:, 1).^2) + sum(normZres(:, 2).^2);
@@ -110,4 +115,4 @@ for j = 1:length(error)
     data = [data, eval([error{j}])'];
 end
 dataWfilenames = [SummaryTable.plateID, num2cell(data)];
-writecell(dataWfilenames, 'errors.txt');
+writecell(dataWfilenames, 'LowCaExp4_RCRC_errors.txt');
