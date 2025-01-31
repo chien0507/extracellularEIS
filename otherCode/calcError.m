@@ -25,6 +25,7 @@ for index = 1:row % read through every row of summary table
         continue;
     end
     filename = SummaryTable.plateID(index);
+    filenames = [filenames; filename];
     DataTable = readtable([dataLocation char(filename)]);
     w = [DataTable.Frequency_Hz_(1:num_freqs)]*2*pi;
     zdata = funRCRC(p,w); % ZDATA HERE IS THE ESTIMATED VALUES
@@ -91,6 +92,7 @@ for index = 1:row % read through every row of summary table
     resnorm_zdata = [resistance_data, reactance_data];
     resnorm_zdata_fitting = resnorm_zdata ./ normalizationArray;
     calcZ = originalfunRCRC(log10(p),w);
+    calcZ_norm = [];
     calcZ_norm(:, 1) = calcZ(:, 1) ./ normalizationArray(1); % normalization array(1) is the max of the RAW real data
     calcZ_norm(:, 2) = calcZ(:, 2) ./ normalizationArray(2); % normalization array(1) is the max of the RAW imag data
     normZres = calcZ_norm - resnorm_zdata_fitting;
@@ -114,5 +116,5 @@ error = [{'mae_vec'} {'resnorm_vec'} ];
 for j = 1:length(error)
     data = [data, eval([error{j}])'];
 end
-dataWfilenames = [SummaryTable.plateID, num2cell(data)];
-writecell(dataWfilenames, 'LowCaExp4_RCRC_errors.txt');
+dataWfilenames = [filenames, num2cell(data)];
+writecell(dataWfilenames, 'errors.txt');
