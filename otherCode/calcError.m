@@ -1,8 +1,8 @@
 % Read in Summary Table
-SummaryTable = readtable('/Users/Athena/summaryTables/20240923_Exp2_summary_table.csv');
+SummaryTable = readtable('/Users/myuser/eisExtracellular/fit/20240706exp1_summary_table.csv');
 [row,col] = size(SummaryTable);
 oldFilename = {'Placeholder'};
-dataLocation = '/Users/Athena/Data/20240923_Exp2/';
+dataLocation = `/Users/myuser/rawData/';
 
 mae_vec = []; rmse_vec = []; mape_vec = []; chi_sq_vec = []; 
 chi_sq_norm_vec = []; resnorm_vec = [];
