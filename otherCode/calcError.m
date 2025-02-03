@@ -1,15 +1,8 @@
-%% gaussian noise
 % Read in Summary Table
-% SummaryTable = readtable('/Users/hannakhor/GaTech Dropbox/Hanna Khor/WPI EIS Project/Biological Sample Data/9-23-24 Testing/20240923_WPIbioExp2/20240923_WPIbioExp2_summary_table.csv');
-% [row,col] = size(SummaryTable);
-% oldFilename = {'Placeholder'};
-% dataLocation = '/Users/hannakhor/GaTech Dropbox/Hanna Khor/WPI EIS Project/Biological Sample Data/9-23-24 Testing/20240923_WPIbioExp2/';
-
-% SummaryTable = readtable('/Users/Athena/GaTech Dropbox/Athena Chien/PBL Hanna-Athena Files/dataforBPSabstract/newSummary/20240923_WPIBioExp2_newSettings_summary_table.csv');
-SummaryTable = readtable('/Users/Athena/GaTech Dropbox/Athena Chien/PBL Hanna-Athena Files/dataforBPSabstract/newSummary/20240923_WPIBioExp2test_subsetnewSettings_summary_table.csv');
+SummaryTable = readtable('/Users/Athena/summaryTables/20240923_Exp2_summary_table.csv');
 [row,col] = size(SummaryTable);
 oldFilename = {'Placeholder'};
-dataLocation = '/Users/Athena/GaTech Dropbox/Athena Chien/WPI EIS Project/Biological Sample Data/9-23-24 Testing/20240923_WPIbioExp2/';
+dataLocation = '/Users/Athena/Data/20240923_Exp2/';
 
 mae_vec = []; rmse_vec = []; mape_vec = []; chi_sq_vec = []; 
 chi_sq_norm_vec = []; resnorm_vec = [];
